@@ -49,12 +49,12 @@
       margin: 0 0 40px;
     }
     h2 {
-      font-size: 15px;
+      font-size: 18px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--ink);
       font-weight: 600;
-      margin: 48px 0 14px;
+      margin: 60px 0 16px;
     }
     p { margin: 0 0 16px; }
     a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
@@ -99,41 +99,24 @@
       margin: 0;
       line-height: 1.55;
     }
-
-    /* Mini tier strip (inside the usage card) */
-    .tiers {
+    .card-cta {
       margin-top: auto;
-      padding-top: 16px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      text-align: center;
-      border-top: 1px dashed var(--rule);
+      padding-top: 18px;
     }
-    .tier .t-label {
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--ink-faint);
-    }
-    .tier .t-num {
-      font-size: 30px;
-      line-height: 1.1;
+    .card-cta a {
+      font-size: 15px;
       color: var(--accent);
-      margin: 2px 0 0;
-      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
     }
-    .tier .t-unit {
-      font-size: 11px;
-      color: var(--ink-soft);
+    .card-cta .arrow {
+      display: inline-block;
+      margin-left: 4px;
+      text-decoration: none;
+      transition: transform .15s ease;
     }
-    .tiers-cap {
-      margin: 10px 0 0;
-      font-size: 13px;
-      font-style: italic;
-      color: var(--ink-faint);
-      grid-column: 1 / -1;
-    }
+    .card-cta a:hover .arrow { transform: translateX(3px); }
 
     /* "What's different" plain rows */
     .diffs { margin: 8px 0 0; }
@@ -272,7 +255,7 @@
       your sites already use keeps working untouched.
     </p>
 
-    <h2>What it does in practice</h2>
+    <h2>In this demo</h2>
     <div class="cards">
       <div class="card">
         <div class="kicker">Use case 01</div>
@@ -281,35 +264,36 @@
           Pages and sections unlock based on the buyer&rsquo;s active subscription. Standard
           Wix member-role gating &mdash; nothing exotic to learn.
         </p>
+        <div class="card-cta">
+          <a href="#">Try premium page <span class="arrow">&rarr;</span></a>
+        </div>
       </div>
       <div class="card">
         <div class="kicker">Use case 02</div>
         <h3>Usage limits</h3>
         <p>
-          Per-plan caps you enforce in Velo. Works the same for downloads, seats, API calls.
+          Per-plan caps you enforce in Velo. The demo uses listings &mdash; Free 1,
+          Basic 3, Premium unlimited. Works the same for downloads, seats, API calls.
         </p>
-        <div class="tiers">
-          <div class="tier">
-            <div class="t-label">Free</div>
-            <div class="t-num">1</div>
-            <div class="t-unit">listing</div>
-          </div>
-          <div class="tier">
-            <div class="t-label">Basic</div>
-            <div class="t-num">3</div>
-            <div class="t-unit">listings</div>
-          </div>
-          <div class="tier">
-            <div class="t-label">Premium</div>
-            <div class="t-num">&infin;</div>
-            <div class="t-unit">unlimited</div>
-          </div>
-          <div class="tiers-cap">Listings, in the demo.</div>
+        <div class="card-cta">
+          <a href="#">See limits in action <span class="arrow">&rarr;</span></a>
         </div>
       </div>
     </div>
 
-    <h2>What&rsquo;s different</h2>
+    <h2>All the familiar features</h2>
+    <div class="chips">
+      <span class="chip"><strong>Free</strong></span>
+      <span class="chip">One-time</span>
+      <span class="chip">Recurring</span>
+      <span class="chip">Setup fee</span>
+      <span class="chip">Free trial</span>
+      <span class="chip">Plan durations</span>
+      <span class="chip">Access control</span>
+      <span class="chip">Start dates</span>
+    </div>
+
+    <h2>Plus a few extras</h2>
     <div class="diffs">
       <div class="diff">
         <div class="d-lead">Switch plans</div>
@@ -333,20 +317,6 @@
         </div>
       </div>
     </div>
-
-    <h2>Everything Wix Pricing Plans offers, included</h2>
-    <div class="chips">
-      <span class="chip"><strong>Free</strong></span>
-      <span class="chip">One-time</span>
-      <span class="chip">Recurring</span>
-      <span class="chip">Setup fee</span>
-      <span class="chip">Free trial</span>
-      <span class="chip">Plan durations</span>
-      <span class="chip">Access control</span>
-      <span class="chip">Start dates</span>
-    </div>
-
-    <hr />
 
     <h2>Request beta access</h2>
     <p>If this is interesting, leave a note and I&rsquo;ll get back within a day.</p>

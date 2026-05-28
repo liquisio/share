@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A note to Wix partners — Plans LQ (beta)</title>
+  <style>
+    :root {
+      --ink: #1b1a17;
+      --ink-soft: #4a4843;
+      --ink-faint: #8a877f;
+      --rule: #e6e2d8;
+      --rule-strong: #d4cebf;
+      --paper: #fbf9f4;
+      --paper-2: #f5f1e6;
+      --accent: #8a3a1f;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--paper); }
+    body {
+      font-family: "Charter", "Iowan Old Style", "Georgia", "Times New Roman", serif;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 72px 28px 96px;
+    }
+    .meta {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 32px;
+    }
+    h1 {
+      font-size: 34px;
+      line-height: 1.2;
+      font-weight: 600;
+      margin: 0 0 12px;
+      letter-spacing: -0.01em;
+    }
+    .lede {
+      font-size: 19px;
+      color: var(--ink-soft);
+      margin: 0 0 40px;
+    }
+    h2 {
+      font-size: 15px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      font-weight: 600;
+      margin: 48px 0 14px;
+    }
+    p { margin: 0 0 16px; }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    hr {
+      border: 0;
+      border-top: 1px solid var(--rule);
+      margin: 40px 0;
+    }
+
+    /* Use-case cards */
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 8px 0 4px;
+      align-items: stretch;
+    }
+    .card {
+      border: 1px solid var(--rule-strong);
+      background: var(--paper);
+      padding: 22px 22px 24px;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+    }
+    .card .kicker {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 6px;
+    }
+    .card h3 {
+      font-size: 19px;
+      font-weight: 600;
+      margin: 0 0 10px;
+      letter-spacing: -0.005em;
+    }
+    .card p {
+      font-size: 16px;
+      color: var(--ink-soft);
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    /* Mini tier strip (inside the usage card) */
+    .tiers {
+      margin-top: auto;
+      padding-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      text-align: center;
+      border-top: 1px dashed var(--rule);
+    }
+    .tier .t-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .tier .t-num {
+      font-size: 30px;
+      line-height: 1.1;
+      color: var(--accent);
+      margin: 2px 0 0;
+      font-weight: 600;
+    }
+    .tier .t-unit {
+      font-size: 11px;
+      color: var(--ink-soft);
+    }
+    .tiers-cap {
+      margin: 10px 0 0;
+      font-size: 13px;
+      font-style: italic;
+      color: var(--ink-faint);
+      grid-column: 1 / -1;
+    }
+
+    /* "What's different" plain rows */
+    .diffs { margin: 8px 0 0; }
+    .diff {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 18px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .diff:first-child { border-top: 1px solid var(--rule); }
+    .diff .d-lead {
+      font-weight: 600;
+      color: var(--ink);
+      font-size: 17px;
+    }
+    .diff .d-body {
+      color: var(--ink-soft);
+      font-size: 16.5px;
+      line-height: 1.5;
+    }
+    .diff .d-body .vs {
+      display: block;
+      font-size: 14px;
+      color: var(--ink-faint);
+      font-style: italic;
+      margin-top: 2px;
+    }
+
+    /* Feature chips */
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 6px 0 0;
+    }
+    .chip {
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      border: 1px solid var(--rule-strong);
+      background: var(--paper);
+      padding: 5px 13px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .chip strong { color: var(--ink); font-weight: 600; }
+
+    /* Form */
+    form {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .full { grid-column: 1 / -1; }
+    label {
+      display: block;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 6px;
+    }
+    input, textarea {
+      width: 100%;
+      font: inherit;
+      font-size: 16px;
+      color: var(--ink);
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid var(--rule);
+      padding: 6px 0 8px;
+      outline: none;
+      transition: border-color .15s ease;
+    }
+    input:focus, textarea:focus { border-color: var(--accent); }
+    textarea { resize: vertical; min-height: 28px; font-family: inherit; }
+    button {
+      margin-top: 8px;
+      justify-self: start;
+      font: inherit;
+      font-size: 15px;
+      letter-spacing: 0.04em;
+      background: var(--ink);
+      color: var(--paper);
+      border: 0;
+      padding: 12px 22px;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+    button:hover { background: var(--accent); }
+
+    .signoff {
+      margin-top: 56px;
+      color: var(--ink-soft);
+      font-style: italic;
+    }
+    .signoff .name { font-style: normal; color: var(--ink); }
+    footer {
+      margin-top: 64px;
+      font-size: 13px;
+      color: var(--ink-faint);
+      text-align: center;
+    }
+
+    @media (max-width: 560px) {
+      .page { padding: 48px 22px 72px; }
+      h1 { font-size: 28px; }
+      .cards { grid-template-columns: 1fr; }
+      .diff { grid-template-columns: 1fr; gap: 4px; }
+      form { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <div class="meta">May 2026 &nbsp;·&nbsp; A note to Wix partners</div>
+
+    <h1>A lower-cost way to run subscription sites on Wix.</h1>
+    <p class="lede">
+      I&rsquo;m looking for a handful of agency partners to try an early build.
+      Honest feedback over polished launch &mdash; happy to talk through fit before you commit.
+    </p>
+
+    <hr />
+
+    <h2>The idea</h2>
+    <p>
+      Wix Pricing Plans is great, but it carries Wix&rsquo;s transaction fees and locks
+      subscription logic into Wix&rsquo;s billing. This app keeps the editor experience
+      you already know, and moves the money to Stripe.
+    </p>
+    <p>
+      Stripe handles payments and subscriptions. The app syncs subscription status back
+      into Wix. Member roles are assigned automatically &mdash; so any role-based logic
+      your sites already use keeps working untouched.
+    </p>
+
+    <h2>What it does in practice</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="kicker">Use case 01</div>
+        <h3>Gated content</h3>
+        <p>
+          Pages and sections unlock based on the buyer&rsquo;s active subscription. Standard
+          Wix member-role gating &mdash; nothing exotic to learn.
+        </p>
+      </div>
+      <div class="card">
+        <div class="kicker">Use case 02</div>
+        <h3>Usage limits</h3>
+        <p>
+          Per-plan caps you enforce in Velo. Works the same for downloads, seats, API calls.
+        </p>
+        <div class="tiers">
+          <div class="tier">
+            <div class="t-label">Free</div>
+            <div class="t-num">1</div>
+            <div class="t-unit">listing</div>
+          </div>
+          <div class="tier">
+            <div class="t-label">Basic</div>
+            <div class="t-num">3</div>
+            <div class="t-unit">listings</div>
+          </div>
+          <div class="tier">
+            <div class="t-label">Premium</div>
+            <div class="t-num">&infin;</div>
+            <div class="t-unit">unlimited</div>
+          </div>
+          <div class="tiers-cap">Listings, in the demo.</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>What&rsquo;s different</h2>
+    <div class="diffs">
+      <div class="diff">
+        <div class="d-lead">Switch plans</div>
+        <div class="d-body">
+          Upgrades and downgrades through Stripe&rsquo;s billing portal, prorated.
+          <span class="vs">Wix today: cancel, then re-purchase.</span>
+        </div>
+      </div>
+      <div class="diff">
+        <div class="d-lead">End dates</div>
+        <div class="d-body">
+          Set an end date and charge a prorated fee for customers subscribing mid-cycle.
+          <span class="vs">Not supported in Wix Pricing Plans.</span>
+        </div>
+      </div>
+      <div class="diff">
+        <div class="d-lead">Free Wix sites</div>
+        <div class="d-body">
+          Take subscriptions on the Free tier.
+          <span class="vs">No Business / Commerce plan required.</span>
+        </div>
+      </div>
+    </div>
+
+    <h2>Everything Wix Pricing Plans offers, included</h2>
+    <div class="chips">
+      <span class="chip"><strong>Free</strong></span>
+      <span class="chip">One-time</span>
+      <span class="chip">Recurring</span>
+      <span class="chip">Setup fee</span>
+      <span class="chip">Free trial</span>
+      <span class="chip">Plan durations</span>
+      <span class="chip">Access control</span>
+      <span class="chip">Start dates</span>
+    </div>
+
+    <hr />
+
+    <h2>Request beta access</h2>
+    <p>If this is interesting, leave a note and I&rsquo;ll get back within a day.</p>
+
+    <form>
+      <div>
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" autocomplete="name" />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" />
+      </div>
+      <div class="full">
+        <label for="site">Wix site URL (optional)</label>
+        <input id="site" name="site" type="url" placeholder="https://" />
+      </div>
+      <div class="full">
+        <label for="note">One line about your use case</label>
+        <textarea id="note" name="note" rows="2"></textarea>
+      </div>
+      <button type="submit">Send request</button>
+    </form>
+
+    <p class="signoff">
+      &mdash; <span class="name">Varun</span>, building Plans LQ
+    </p>
+
+    <footer>
+      Beta &middot; nothing here is a final price or feature commitment.
+    </footer>
+  </article>
+</body>
+</html>
